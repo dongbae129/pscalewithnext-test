@@ -109,6 +109,10 @@ async function handler(
           avatar,
         },
       });
+      return res.json({
+        ok: true,
+        currentUser,
+      });
     }
     res.json({ ok: true, currentUser });
   }
