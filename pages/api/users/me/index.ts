@@ -53,9 +53,6 @@ async function handler(
           email,
         },
       });
-      res.json({
-        ok: true,
-      });
     }
     if (phone && phone !== currentUser?.phone) {
       const alreadyExists = Boolean(
@@ -82,9 +79,6 @@ async function handler(
           phone,
         },
       });
-      res.json({
-        ok: true,
-      });
     }
     if (name && name !== currentUser?.name) {
       await client.user.update({
@@ -94,10 +88,6 @@ async function handler(
         data: {
           name,
         },
-      });
-      return res.json({
-        ok: true,
-        message: "name is modified",
       });
     }
     if (avatar) {
@@ -110,7 +100,7 @@ async function handler(
         },
       });
     }
-    res.json({ ok: true });
+    res.json({ ok: true, currentUser });
   }
 }
 
