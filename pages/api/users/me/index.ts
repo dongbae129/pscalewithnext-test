@@ -110,7 +110,7 @@ async function handler(
         },
       });
     }
-    res.json({ ok: true });
+    res.json({ ok: true, currentUser });
   }
 }
 
